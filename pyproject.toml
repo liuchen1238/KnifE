@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "knife"
+version = "0.1.0"
+description = "Knife — slice up CPU, memory and network resources between your apps."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "ORANGE" }]
+keywords = ["resource", "monitor", "memory", "network", "limit", "priority"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "psutil>=5.9",
+]
+
+[project.optional-dependencies]
+gui = []
+dev = ["pytest>=7"]
+
+[project.scripts]
+knife = "knife.cli.main:main"
+knife-gui = "knife.gui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["knife*"]

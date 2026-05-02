@@ -1,0 +1,3 @@
+[console_scripts]
+knife = knife.cli.main:main
+knife-gui = knife.gui.app:main
